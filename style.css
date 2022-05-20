@@ -1,0 +1,115 @@
+/* https://coolors.co/a63446-fbfef9-0c6291-000004-53917e */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    font-family: "Bitter", sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: #FBFEF9;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    background-color: #000004;
+    padding: 8px;
+    gap: 8px;
+    width: 100%;
+    max-width: 100vmin;
+}
+.grid-item{
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+    box-shadow: 0px 0px 2px 2px #21212121;
+    background-color: #FBFEF9;
+    border: 2px solid #0000;
+}
+.grid-item.taken{
+    animation: played 0.2s linear 1;
+    -webkit-animation: played 0.2s linear 1;
+}
+@keyframes played {
+    0%{
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+}
+.grid-item.taken:after{
+    content: "";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: -5px -5px 3px 3px #0002 inset,
+    5px 5px 3px 3px #fff3 inset;
+}
+.grid-item.taken.player-one{
+    background-color: #A63446;
+}
+.grid-item.taken.player-one:after{
+    background-color: #A63446;
+}
+.grid-item.taken.player-two{
+    background-color: #0C6291;
+}
+.grid-item.taken.player-two:after{
+    background-color: #0C6291;
+}
+.restart-btn{
+    padding: 8px 32px;
+    margin: 10px 0;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: 2px solid #000004;
+    color: #000004;
+    background-color: #FBFEF9;
+    font-size: 16px;
+    transition-duration: 0.2s;
+}
+.restart-btn:hover{
+    color: #FBFEF9;
+    background-color: #000004;
+}
+.grid-item.taken.winning{
+    border: 2px solid #FBFEF9;
+}
